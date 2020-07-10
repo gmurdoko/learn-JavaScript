@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    // alert("Hello World");
+    </script>
+    <script src="index.js">
+        // alert("halo dari sini") //tidak dijalankan karena menggunalakn js ekternal
+    </script>
+</head>
+<body>
+    <h1 id="textSatu">
+        Hello you!
+    </h1>
+    <button onclick="changeText()">
+        changeText
+    </button>
+    <script>
+        function changeText() {
+            document.getElementById("textSatu").innerHTML="ini isi ya dari scropt";    
+        }
+        
+    </script>
+</body>
+</html>

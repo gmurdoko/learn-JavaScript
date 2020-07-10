@@ -1,0 +1,3 @@
+JavaScript pass by reference is different, your object is treated as a reference as long as you're changing its attributes like obj.x = 1, but assignment of the object variable itself (obj = []) will treat it as value-based variable.
+
+In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever.

@@ -1,0 +1,130 @@
+Javascript Basic — Variabel
+Soal
+1. Jelaskan cara mendeklarasikan variable x dan y di javascript
+untuk mendeklarasikan variabel kita dapat menggunakan var / let penulisan biasanya menggunakan camelCase
+var tidak memiliki limitasi bisa di assign di baris mana saja
+let memiliki limitasi variabel harus dideklarasikan dulu baru di assign di baris selanjutnya 
+let x;
+let y;
+
+2. Jelaskan cara mendeklarasikan konstanta phi di javascript
+untuk mendeklarasikan constanta biasanya menggunakan gaya penulisan KAPITAL
+const tidak dapat di assign ulang atau isinya akan tetap dari pertama kali di assign.
+const PHI;
+
+3. Sebutkan antara null dan undefined saat mendeklarasikan variable
+undefined itu deklarasi variabel yang tidak di assign
+null itu deklarasi variabel yang di assig null
+let x;
+let y=null;
+
+4. Apakah output dari kode berikut
+let x = 1;
+x = x + "1";
+console.log(x);
+11
+
+5. Apakah output dari kode berikut
+var y = 0;
+console.log(--y);
+console.log(y++);
+-1
+-1
+
+6. Apakah output dari kode berikut
+let x = 1
+console.log(x++);
+console.log(++x);
+1
+3
+
+7. Apakah output dari kode berikut
+const x = 1;
+console.log(x + 1);
+console.log(x++);
+2
+err / karena const tidak dapat di re assign
+
+8. Perbaiki kesalahan yang terdapat di kode berikut
+x = 1;
+let x;
+console.log(x);
+let x;
+x=1;
+console.log(x);
+
+9. Jika diketahui N telur, dan 1 lusin sama dengan 12 telur, buatlah
+program yang akan mencetak output sebagai berikut
+Anda memiliki 2 lusin dan 0 sisa telur. // jumlah telur 24
+Anda memiliki 2 lusin dan 3 sisa telur. // jumlah telur 27
+Variabel input soal no. 9
+let telurA = 24;
+let telurB = 27;
+let telurC = 56;
+let telurD = 67;
+let telurE = 73;
+
+function lusinTelur(input) {
+    let lusin=12;
+    let jumlahLusin= Math.floor(input/lusin);
+    let sisa = input%lusin;
+    return {
+        jumlahLusin:jumlahLusin,
+        sisa: sisa,
+    };
+}
+function printLusin(inputT) {
+    let hasil= lusinTelur(inputT);
+    let hasil2 =`Anda memiliki ${hasil.jumlahLusin} lusin dan ${hasil.sisa} sisa telur.`;
+    console.log(hasil2);
+}
+printLusin(telurA)
+printLusin(telurB)
+printLusin(telurC)
+printLusin(telurD)
+printLusin(telurE)
+
+10. Jika diketahui N telur, dan 1 gros sama dengan 144 telur, 1 lusin
+sama dengan 12 telur, buatlah program yang akan mencetak output
+sebagai berikut
+Anda memiliki 1 gros, 0 lusin, 0 telur. // jumlah telur 144.
+Anda memiliki 9 gros, 3 lusin, dan 10 telur. // jumlah telur 1342.
+Variabel input soal no. 10
+let telurA = 144;
+let telurB = 1342;
+let telurC = 4675;
+let telurD = 8723;
+let telurE = 9394;
+
+function grossTelur(inputTelur) {
+    let gross = 144;
+    let jumlahasil = Math.floor(inputTelur/gross);
+    let sisa2 = inputTelur%gross;
+    let lusinhasil = lusinTelur(sisa2);
+    return {
+        jumlahasil:jumlahasil,
+        jumlahLusin: lusinhasil.jumlahLusin,
+        sisa: lusinhasil.sisa,
+    };
+}
+function lusinTelur(input) {
+    let lusin=12;
+    let jumlahLusin= Math.floor(input/lusin);
+    let sisa = input%lusin;
+    return {
+        jumlahLusin:jumlahLusin,
+        sisa: sisa,
+    };
+}
+
+function printGross(inputT) {
+    let hasil= grossTelur(inputT);
+    let hasil2 =`Anda memiliki ${hasil.jumlahasil} gross, ${hasil.jumlahLusin} lusin dan ${hasil.sisa} sisa telur.`;
+    console.log(hasil2);
+}
+
+printGross(telurA)
+printGross(telurB)
+printGross(telurC)
+printGross(telurD)
+printGross(telurE)
